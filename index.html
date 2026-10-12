@@ -10,13 +10,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbf6ee;
-      --paper: #fffdf8;
-      --ink: #3b2f2a;
-      --muted: #7a685d;
-      --accent: #b5543c;
-      --accent-dark: #8f3f2b;
-      --line: #e8dccb;
+      --bg: #f4f8ee;
+      --pond: #e3efd6;
+      --paper: #fcfef9;
+      --ink: #24352a;
+      --muted: #5b6e5f;
+      --accent: #4f8a3c;
+      --accent-dark: #3a6b2c;
+      --frog: #5f9e45;
+      --lily: #8bbf6a;
+      --line: #d3e3c6;
     }
     * { box-sizing: border-box; }
     body {
@@ -32,8 +35,15 @@
 
     header {
       text-align: center;
-      padding: 72px 0 48px;
+      padding: 48px 0 44px;
+      background: var(--pond);
       border-bottom: 1px solid var(--line);
+    }
+    .hero-frog {
+      display: block;
+      width: 150px;
+      height: 112px;
+      margin: 0 auto 12px;
     }
     h1 {
       font-family: "Playfair Display", Georgia, serif;
@@ -49,10 +59,9 @@
     }
     .flourish {
       display: block;
-      width: 64px;
-      height: 2px;
-      background: var(--accent);
-      margin: 24px auto 0;
+      width: 96px;
+      height: 18px;
+      margin: 20px auto 0;
     }
 
     .about {
@@ -95,6 +104,18 @@
       padding: 24px;
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .book::after {
+      content: "";
+      position: absolute;
+      right: -14px;
+      bottom: -14px;
+      width: 64px;
+      height: 64px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 32 L44 4 A28 28 0 1 1 20 4 Z' fill='%238bbf6a' opacity='.45'/%3E%3C/svg%3E") no-repeat center / contain;
+      pointer-events: none;
     }
     .book h3 {
       font-family: "Playfair Display", Georgia, serif;
@@ -117,6 +138,8 @@
       padding: 10px 18px;
       border-radius: 6px;
       font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
     }
     .book a.button:hover,
     .book a.button:focus-visible { background: var(--accent-dark); }
@@ -126,16 +149,50 @@
       padding: 24px 0 40px;
       color: var(--muted);
       font-size: 0.85rem;
+      background: var(--pond);
       border-top: 1px solid var(--line);
+    }
+    .footer-frog {
+      display: block;
+      width: 48px;
+      height: 36px;
+      margin: 0 auto 6px;
     }
   </style>
 </head>
 <body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="frog" viewBox="0 0 160 120">
+      <ellipse cx="80" cy="102" rx="72" ry="15" fill="#8bbf6a"/>
+      <polygon points="80,102 70,118 90,118" fill="#e3efd6"/>
+      <ellipse cx="44" cy="90" rx="15" ry="10" fill="#4f8a3c"/>
+      <ellipse cx="116" cy="90" rx="15" ry="10" fill="#4f8a3c"/>
+      <ellipse cx="80" cy="76" rx="38" ry="26" fill="#5f9e45"/>
+      <ellipse cx="80" cy="86" rx="24" ry="13" fill="#cfe6ad"/>
+      <ellipse cx="62" cy="100" rx="10" ry="5" fill="#4f8a3c"/>
+      <ellipse cx="98" cy="100" rx="10" ry="5" fill="#4f8a3c"/>
+      <circle cx="62" cy="52" r="14" fill="#5f9e45"/>
+      <circle cx="98" cy="52" r="14" fill="#5f9e45"/>
+      <circle cx="62" cy="51" r="9" fill="#fff"/>
+      <circle cx="98" cy="51" r="9" fill="#fff"/>
+      <circle cx="63.5" cy="52" r="4.5" fill="#24352a"/>
+      <circle cx="99.5" cy="52" r="4.5" fill="#24352a"/>
+      <circle cx="55" cy="72" r="5" fill="#f2a7a0" opacity=".75"/>
+      <circle cx="105" cy="72" r="5" fill="#f2a7a0" opacity=".75"/>
+      <path d="M66 72 Q80 84 94 72" fill="none" stroke="#24352a" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
   <header>
     <div class="wrap">
+      <svg class="hero-frog" role="img" aria-label="A smiling frog on a lily pad"><use href="#frog"/></svg>
       <h1>Zena Plech</h1>
       <p class="tagline">Books for family fun and family keepsakes</p>
-      <span class="flourish" aria-hidden="true"></span>
+      <svg class="flourish" viewBox="0 0 96 18" aria-hidden="true">
+        <ellipse cx="16" cy="9" rx="12" ry="6" fill="#8bbf6a"/>
+        <ellipse cx="48" cy="9" rx="14" ry="7" fill="#5f9e45"/>
+        <ellipse cx="80" cy="9" rx="12" ry="6" fill="#8bbf6a"/>
+      </svg>
     </div>
   </header>
 
@@ -146,7 +203,7 @@
           Zena Plech is my pen name, a play on my grandmother's maiden name
           Zdena Plechsmidova, who passed away in 2009. She loved family
           gatherings. She loved to be the hostess, she loved to cook and to
-          bake, and most importantly, she loved to laugh.
+          bake, and most importantly, she loved to laugh. She collected frog figurines.
         </blockquote>
       </div>
     </section>
@@ -190,7 +247,9 @@
   </main>
 
   <footer>
-    <div class="wrap">&copy; <span id="year">2026</span> Zena Plech</div>
+    <div class="wrap">
+      <svg class="footer-frog" aria-hidden="true"><use href="#frog"/></svg>
+      &copy; <span id="year">2026</span> Zena Plech</div>
   </footer>
   <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
