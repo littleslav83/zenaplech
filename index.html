@@ -78,6 +78,7 @@
       line-height: 1.6;
     }
 
+    .books .wrap { max-width: 1080px; }
     .books {
       padding: 48px 0 72px;
       border-top: 1px solid var(--line);
@@ -94,14 +95,14 @@
       margin: 0;
       padding: 0;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr));
+      gap: 28px;
     }
     .book {
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 10px;
-      padding: 24px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
       position: relative;
@@ -131,7 +132,7 @@
     .book h3 {
       font-family: "Playfair Display", Georgia, serif;
       font-weight: 600;
-      font-size: 1.3rem;
+      font-size: 1.5rem;
       line-height: 1.3;
       margin: 0 0 8px;
     }
@@ -242,6 +243,9 @@
             <a class="button" href="https://www.amazon.com/dp/B0HMR7C3D6" target="_blank" rel="noopener">View on Amazon</a>
           </li>
           <li class="book">
+            <a class="book-cover" href="images/oh-look-a-squirrel.jpg" target="_blank" rel="noopener" title="View full cover">
+              <img src="images/oh-look-a-squirrel.jpg" width="1400" height="930" alt="Oh Look, a Squirrel! full book cover, back, spine and front">
+            </a>
             <h3>Oh Look, a Squirrel!</h3>
             <p>The Book to Read When You're Avoiding Doing the Thing</p>
             <a class="button" href="https://www.amazon.com/dp/B0HLY337CZ" target="_blank" rel="noopener">View on Amazon</a>
